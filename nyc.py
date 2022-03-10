@@ -10,6 +10,12 @@ COLUMNA = 'started_at'
 st.title('Cicle Rides in NYC')
 sidebar = st.sidebar
 
+st.header('Integrantes:')
+st.subheader('Irais Aguirre Valente')
+st.subheader('Judith Maldonado Garcia')
+st.subheader('ISW 602')
+st.text('Aplicación web encargada de analizar los dados recopilados del archivo CVS citibike-tripdata.csv')
+
 @st.cache
 def cargar_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows, encoding_errors='ignore')
@@ -23,7 +29,7 @@ if checkbox_data:
     estado = st.text('Cargando...')
     data = cargar_data(500)    
     estado.text("¡Cargado! (usando st.cache)")
-    st.subheader('Raw data')
+    st.subheader('Todos los datos')
     st.dataframe(data)
 
 checkbox_hora = sidebar.checkbox("Mostrar los datos por hora")
